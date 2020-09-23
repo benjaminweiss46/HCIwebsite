@@ -1,0 +1,4 @@
+AuthType Basic  
+AuthName "HCI Project access restricted"
+AuthUserFile /home/bweiss6/www/.htpasswd
+require valid-user
