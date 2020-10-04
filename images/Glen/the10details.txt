@@ -1,0 +1,10 @@
+- transparent UI floating on top of Zoom window
+- full complex mode enabled
+- one-click from mini mode to complex mode and vice versa
+- activate/deactivate detection of the chat
+- provide different visualization methods
+- adjust size of window so that it does not distract the lecturer
+- adjust arrangements of icons and textboxes
+- add more controlling methods such as sliders
+- hide window in mini mode so that it blends into zoom window
+- window automatically pops up when cursor stops on top of mini mode
