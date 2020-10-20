@@ -5,90 +5,96 @@
 		Group 19 HCI
 	</title>
 	<style>
-		ul {
-		  list-style-type: none;
-		  margin: 0;
-		  padding: 0;
-		  overflow: hidden;
-		  background-color: #333;
-		}
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		background-color: #333;
+	}
 
-		li {
-		  float: left;
-		}
+	li {
+		float: left;
+	}
 
-		li a  {
-		  display: block;
-		  color: white;
-		  text-align: center;
-		  padding: 14px 16px;
-		  text-decoration: none;
-		}
+	li a  {
+		display: block;
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+	}
 
-		li a:hover {
-		  background-color: #111;
-		}
-		#main {
-			margin:auto;
-			max-width:800px;
-		}
-		#names {
-			float: right;
-		}
-		.testDocs {
-			max-width: 600px;
-			text-align: center;
-			margin: auto;
-  			border: 3px solid black;
-		}
+	li a:hover {
+		background-color: #111;
+	}
+	#main {
+		margin:auto;
+		max-width:800px;
+	}
+	#names {
+		float: right;
+	}
+	.testDocs {
+		max-width: 600px;
+		text-align: center;
+		margin: auto;
+		border: 3px solid black;
+	}
 	</style>
 </head>
 <body>
 	<div>
 		<ul>
-	  		<li><a href="index.html">Proposal</a></li>
-	  		<li><a href="LFP&TP.html">Low Fidelity Prototype & Test Plan</a></li>
-	  		<li><a href="cPrototype.html">Computer Prototype</a></li>
-	  		<li><a href="">Formative Feedback</a></li>
-	  		<li><a href="">Low Fidelity Prototype</a></li>
-	  		<li><a href="">Alpha System</a></li>
-	  		<li><a href="">Beta System</a></li>
+			<li><a href="index.html">Proposal</a></li>
+			<li><a href="LFP&TP.html">Low Fidelity Prototype & Test Plan</a></li>
+			<li><a href="cPrototype.html">Computer Prototype</a></li>
+			<li><a href="">Formative Feedback</a></li>
+			<li><a href="">Low Fidelity Prototype</a></li>
+			<li><a href="">Alpha System</a></li>
+			<li><a href="">Beta System</a></li>
 		</ul>
 		<p id=names>Ben Weiss, Glen Xu, and Anthony Anastasopoulos</p>
 	</div>
 	<div id="main">
 		<h1>Computer Prototype</h1>
 		<ul>
-  			<li><a href="#um">User Manual</a></li>
-  			<li><a href="#de">Design Evolution</a></li>
-  			<li><a href="#cp">Computer Prototype</a></l>
-  			<li><a href="up">User Poputation</a></li>
-  			<li><a href="#utp">Usability Testing Plan</a></li>
-  			<li><a href="ri">Reporting Instructions</a></li>
-  			<li><a href="ue">Usability Evaluation</a></li>
-		</ul>
-		<h3 id="um">User Manual</h3>
-		<embed src="Computer-Prototype/User-Manual/User-Manual.pdf" width="800px" height="450px" />
-		<h3 id="#de">Design Evolution</h3>
-		<h4>Slow Chat</h4>
-		<p>The slow chat button was a feature that allowed to slow down the chat recieved by zoom. This is done so the host never misses a comment at the expense of a potential delay on the hosts chat. While this option was good in practice if confused users in testing who didn't understand what this button did. Even with some explination some users didn't get what it really did. So this was completely removed.</p>
-		<h4>Tool Tips</h4>
-		<p>While we may have believed our interface was so easy to use it needed no explanation. This proved to be incorrect, some user had no idea what to do. To combat this we have included tooltips on some of the buttons to indicate what actions the button performs.</p>
-		<h4>More Options</h4>
-		<p>While we wanted have more than 4 graph options, and give users maximal optionality we didn't give them a way to get more in practice. Therefore we added a button to the graph options so that users can select from a much larger range of options.</p>
-		<h4>Graph Customization</h4>
-		<p>We initially expected users to customize the graphs by clicking on graph elements. Not many users understood this interation. Therefore we moved graph customization to its own section, with labels and input boxes so users
-		know exactly how to customize the graph.</p>
-		<h4>Preview Selection</h4>
-		<p>We expected users to understand that to see their graph in a larger window and edit it they can click on the preview. This was a poor assumption and testing proved users didn't do this. Therefore we added an explicit select button to select a certain visualization.</p>
-		<h3 id="cp">Computer Prototype</h3>
-		<p>This is the distribution for v1.1 of our software, while the user manual document focused on v1.0. Luckily the only changes are trivial. The record button will now automatically detect some messages it feels are answers. The visualization option menu now has a new button to access more options. Thats all the changes you need to concern yourself with.
+			<li><a href="#um">User Manual</a></li>
+			<li><a href="#de">Design Evolution</a></li>
+			<li><a href="#cp">Computer Prototype</a></l>
+				<li><a href="#up">User Poputation</a></li>
+				<li><a href="#utp">Usability Testing Plan</a></li>
+				<li><a href="ri">Reporting Instructions</a></li>
+				<li><a href="ue">Usability Evaluation</a></li>
+			</ul>
+			<h3 id="um">User Manual</h3>
+			<embed src="Computer-Prototype/User-Manual/User-Manual.pdf" width="800px" height="450px" />
+			<h3 id="#de">Design Evolution</h3>
+			<h4>Slow Chat</h4>
+			<p>The slow chat button was a feature that allowed to slow down the chat recieved by zoom. This is done so the host never misses a comment at the expense of a potential delay on the hosts chat. While this option was good in practice if confused users in testing who didn't understand what this button did. Even with some explination some users didn't get what it really did. So this was completely removed.</p>
+			<h4>Tool Tips</h4>
+			<p>While we may have believed our interface was so easy to use it needed no explanation. This proved to be incorrect, some user had no idea what to do. To combat this we have included tooltips on some of the buttons to indicate what actions the button performs.</p>
+			<h4>More Options</h4>
+			<p>While we wanted have more than 4 graph options, and give users maximal optionality we didn't give them a way to get more in practice. Therefore we added a button to the graph options so that users can select from a much larger range of options.</p>
+			<h4>Graph Customization</h4>
+			<p>We initially expected users to customize the graphs by clicking on graph elements. Not many users understood this interation. Therefore we moved graph customization to its own section, with labels and input boxes so users
+				know exactly how to customize the graph.</p>
+				<h4>Preview Selection</h4>
+				<p>We expected users to understand that to see their graph in a larger window and edit it they can click on the preview. This was a poor assumption and testing proved users didn't do this. Therefore we added an explicit select button to select a certain visualization.</p>
+				<h3 id="cp">Computer Prototype</h3>
+				<p>This is the distribution for v1.1 of our software, while the user manual document focused on v1.0. Luckily the only changes are trivial. The record button will now automatically detect some messages it feels are answers. The visualization option menu now has a new button to access more options. Thats all the changes you need to concern yourself with.</p>
 
-		Once you download the zip, extract and cd towards the dist folder that is where you may run the command outlined in the readme and user manual.
+				<p>Once you download the zip, extract and cd towards the dist folder that is where you may run the command outlined in the readme and user manual.</p>
 
-		Below you will find the download link for our computer prototype. This is a very initial developement of our product but should carry all needed features for testing. The only features it currently missing is, creating the graphs from the chat data, getting chat data from the zoom servers and finding answers to consider in the chat. Please excuse some of the more janky aspects of application as it is still in developement. Focus on the usability of the interface instead. Hope you enjoy.</p>
-		<a href="Computer-Prototype/v1.1/berry.zip">Download berry</a>
-		<h3 id="#utp">Usibility Testing Plan</h3>
-		<embed src="Computer-Prototype/Usability-Test-Procedure/Usability Test Procedure.pdf" width="800px" height="300px"/>
-</body>
-</html>
+				<p>Below you will find the download link for our computer prototype. This is a very initial developement of our product but should carry all needed features for testing. The only features it currently missing is, creating the graphs from the chat data, getting chat data from the zoom servers and finding answers to consider in the chat. Please excuse some of the more janky aspects of application as it is still in developement. Focus on the usability of the interface instead. Hope you enjoy.</p>
+				<a href="Computer-Prototype/v1.1/berry.zip">Download berry</a>
+
+				<h3 id="up">User Poputation</h3>
+				<p> In the project proposal, we described 3 distinct personas who could gain benefit by our product, a 51 year old CEO, a university professor, and an engineering student. All of the 3 personas are unsatisfied with the current Zoom service, and are willing to experience products that will improve their experience. However, we decided to apply the test plan of the computer prototype to 2 of them because of their experience and knowledge. The user population for our application need to have basic knowledge of java and command lines.</p>
+
+				<p>The first is Robert Woods, age 43, a university professor, and the second is Christopher Lee, age 21, a student of McGill Engineering. These users are able to configure their environment and install the application with barely any difficulties, because they have the basic knowledge of computers. They are also comfortable with trying out new functions that are provided with our application. By identifying these users more easily, the test results can be analyzed while considering users to make corresponding improvements to the prototype.</p>
+
+				<h3 id="#utp">Usability Testing Plan</h3>
+				<embed src="Computer-Prototype/Usability-Test-Procedure/Usability Test Procedure.pdf" width="800px" height="300px"/>
+			</body>
+			</html>
