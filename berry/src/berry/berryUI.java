@@ -7,6 +7,8 @@ package berry;
 
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.DefaultListModel;
 
 /**
@@ -34,11 +36,12 @@ public class berryUI extends javax.swing.JFrame {
     "Ryan: Def yes"}; //will be suplies by zoom later, temp data
     DefaultListModel listModel = new DefaultListModel();
     ArrayList<Integer> selections = new ArrayList<Integer>();
+    List<Double> scores = new ArrayList<Double>();
     public berryUI() {
         initComponents();
-        jPanel2.setVisible(false);
-        jPanel7.setVisible(false);
-        jList1.setListData(listData);
+        graphOptionsPanel.setVisible(false);
+        previewPanel.setVisible(false);
+        chatList.setListData(listData);
         for (int i = 0; i<listData.length; i++) {
             listModel.addElement(listData[i]);
         }
@@ -54,177 +57,179 @@ public class berryUI extends javax.swing.JFrame {
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+    	graph = new GraphPanel(scores);
+        graphPagePanel = new javax.swing.JPanel();
+        backButton = new javax.swing.JButton();
+        graphPanel = new javax.swing.JPanel();
+        vAxisText = new javax.swing.JLabel();
+        graphTitleText = new javax.swing.JLabel();
+        hAxisText = new javax.swing.JLabel();
+        custimizeGraphPanel = new javax.swing.JPanel();
+        titleIndicator = new javax.swing.JLabel();
+        vAxisIndicator = new javax.swing.JLabel();
+        hAxisIndicator = new javax.swing.JLabel();
+        titleField = new javax.swing.JTextField();
+        vAxisTitleField = new javax.swing.JTextField();
+        hAxistTitleField = new javax.swing.JTextField();
+        submitButton = new javax.swing.JButton();
+        hideMenu = new javax.swing.JButton();
+        mainPagePanel = new javax.swing.JPanel();
+        visualizeButton = new javax.swing.JButton();
+        recordAnswersButton = new javax.swing.JButton();
+        graphOptionsPanel = new javax.swing.JPanel();
+        option1Button = new javax.swing.JButton();
+        option2Button = new javax.swing.JButton();
+        option3Button = new javax.swing.JButton();
+        option4Button = new javax.swing.JButton();
+        moreGraphsButton = new javax.swing.JButton();
+        chatPanel = new javax.swing.JPanel();
+        chatScrollPane = new javax.swing.JScrollPane();
+        chatList = new javax.swing.JList<>();
+        sendMessageButton = new javax.swing.JButton();
+        chatTitleText = new javax.swing.JLabel();
+        sendMessageForm = new javax.swing.JTextField();
+        previewPanel = new javax.swing.JPanel();
+        selectGraphButton = new javax.swing.JButton();
 
-        jPanel5 = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
-        jButton3 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jPanel7 = new javax.swing.JPanel();
-        jButton9 = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
+        graphPagePanel.setBackground(new java.awt.Color(255, 255, 255));
+        graphPagePanel.setPreferredSize(new java.awt.Dimension(456, 308));
+        graphPagePanel.setRequestFocusEnabled(false);
 
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel5.setPreferredSize(new java.awt.Dimension(456, 308));
-        jPanel5.setRequestFocusEnabled(false);
-
-        jButton4.setText("Back");
-        jButton4.setBorder(null);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        backButton.setText("Back");
+        backButton.setBorder(null);
+        backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                backButtonActionPerformed(evt);
             }
         });
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        graphPanel.setBackground(new java.awt.Color(255, 255, 255));
+        vAxisText.setText("<html>Verical<br>Axis<br>Titile</html>");
 
-        jLabel3.setText("<html>Verical<br>Axis<br>Titile</html>");
+        graphTitleText.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        graphTitleText.setForeground(new java.awt.Color(51, 0, 51));
+        graphTitleText.setText("Graph Title");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(51, 0, 51));
-        jLabel2.setText("Graph Title");
+        hAxisText.setText("Horizontal Axis Title");
 
-        jLabel4.setText("Horizontal Axis Title");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout graphPanelLayout = new javax.swing.GroupLayout(graphPanel);
+        graphPanel.setLayout(graphPanelLayout);
+        graphPanelLayout.setHorizontalGroup(
+            graphPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, graphPanelLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(247, 247, 247))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(graphTitleText, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+            .addGroup(graphPanelLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(vAxisText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(graph)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, graphPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(270, 270, 270))
+                .addComponent(hAxisText)
+                .addGap(166, 166, 166))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(102, 102, 102)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(56, 56, 56))
+        graphPanelLayout.setVerticalGroup(
+            graphPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, graphPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(graphTitleText, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(113, 113, 113)
+                .addComponent(vAxisText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(graph)
+                .addGap(66, 66, 66)
+                .addComponent(hAxisText)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        custimizeGraphPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel5.setText("Title:");
+        titleIndicator.setText("Title:");
 
-        jLabel6.setText("Vertical Axis title:");
+        vAxisIndicator.setText("Vertical Axis title:");
 
-        jLabel7.setText("Horizontal Axis title:");
+        hAxisIndicator.setText("Horizontal Axis title:");
 
-        jButton10.setText("Submit");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        submitButton.setText("Submit");
+        submitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                submitButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+        javax.swing.GroupLayout custimizeGraphPanelLayout = new javax.swing.GroupLayout(custimizeGraphPanel);
+        custimizeGraphPanel.setLayout(custimizeGraphPanelLayout);
+        custimizeGraphPanelLayout.setHorizontalGroup(
+            custimizeGraphPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(custimizeGraphPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel6))
+                .addGroup(custimizeGraphPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(titleIndicator, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hAxisIndicator)
+                    .addComponent(vAxisIndicator))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
-                    .addComponent(jTextField2)
-                    .addComponent(jTextField4))
-                .addGap(38, 38, 38)
-                .addComponent(jButton10)
+                .addGroup(custimizeGraphPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(vAxisTitleField, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
+                    .addComponent(titleField)
+                    .addComponent(hAxistTitleField))
+                .addGap(38, 38, 38) 
+                .addComponent(submitButton)
                 .addGap(246, 246, 246))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+        custimizeGraphPanelLayout.setVerticalGroup(
+            custimizeGraphPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(custimizeGraphPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton10))
+                .addGroup(custimizeGraphPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(titleIndicator)
+                    .addComponent(titleField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(submitButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(custimizeGraphPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(vAxisIndicator)
+                    .addComponent(vAxisTitleField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(custimizeGraphPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(hAxisIndicator)
+                    .addComponent(hAxistTitleField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jButton11.setText("Hide Menu");
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
+        hideMenu.setText("Hide Menu");
+        hideMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
+                hideMenuActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout graphPagePanelLayout = new javax.swing.GroupLayout(graphPagePanel);
+        graphPagePanel.setLayout(graphPagePanelLayout);
+        graphPagePanelLayout.setHorizontalGroup(
+            graphPagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(graphPagePanelLayout.createSequentialGroup()
+                .addComponent(graphPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(graphPagePanelLayout.createSequentialGroup()
+                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
+                .addComponent(custimizeGraphPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 275, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton11)
+                .addComponent(hideMenu)
                 .addGap(18, 18, 18))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
+        graphPagePanelLayout.setVerticalGroup(
+            graphPagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(graphPagePanelLayout.createSequentialGroup()
+                .addGroup(graphPagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(custimizeGraphPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(graphPagePanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton11)))
+                        .addComponent(hideMenu)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(graphPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -232,344 +237,336 @@ public class berryUI extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(100, 100));
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        mainPagePanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButton2.setText("Visualize");
-        jButton2.setToolTipText("Visualize Collected Data as one of our graph options");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        visualizeButton.setText("Visualize");
+        visualizeButton.setToolTipText("Visualize Collected Data as one of our graph options");
+        visualizeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                visualizeButtonActionPerformed(evt);
             }
         });
 
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Ben\\Pictures\\player_record2.png")); // NOI18N
-        jButton1.setText("<html><p>Record<br>Answers</p></html>\n");
-        jButton1.setToolTipText("Start recording the chat");
-        jButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jButton1.setOpaque(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        recordAnswersButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\Ben\\Pictures\\player_record2.png")); // NOI18N
+        recordAnswersButton.setText("<html><p>Record<br>Answers</p></html>\n");
+        recordAnswersButton.setToolTipText("Start recording the chat");
+        recordAnswersButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        recordAnswersButton.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        recordAnswersButton.setOpaque(false);
+        recordAnswersButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                recordAnswersButtonActionPerformed(evt);
             }
         });
 
-        jPanel2.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+        graphOptionsPanel.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                jPanel2PropertyChange(evt);
+                graphOptionsPanelPropertyChange(evt);
             }
         });
 
-        jButton5.setText("Bar Graph");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        option1Button.setText("Bar Graph");
+        option1Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                option1ButtonActionPerformed(evt);
             }
         });
 
-        jButton6.setText("Line Graph");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        option2Button.setText("Line Graph");
+        option2Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                option2ButtonActionPerformed(evt);
             }
         });
 
-        jButton7.setText("Set Diagram");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        option3Button.setText("Set Diagram");
+        option3Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                option3ButtonActionPerformed(evt);
             }
         });
 
-        jButton8.setText("Pie Chart");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        option4Button.setText("Pie Chart");
+        option4Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                option4ButtonActionPerformed(evt);
             }
         });
 
-        jButton12.setText(">");
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
+        moreGraphsButton.setText(">");
+        moreGraphsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
+                moreGraphsButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(2, 2, 2)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        javax.swing.GroupLayout graphOptionsPanelLayout = new javax.swing.GroupLayout(graphOptionsPanel);
+        graphOptionsPanel.setLayout(graphOptionsPanelLayout);
+        graphOptionsPanelLayout.setHorizontalGroup(
+            graphOptionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(graphOptionsPanelLayout.createSequentialGroup()
+                .addGroup(graphOptionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(option3Button, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(option1Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(10, 10, 10)
+                .addGroup(graphOptionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(option2Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(option4Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, 0)
-                .addComponent(jButton12)
+                .addComponent(moreGraphsButton)
                 .addGap(0, 0, 0))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+        graphOptionsPanelLayout.setVerticalGroup(
+            graphOptionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(graphOptionsPanelLayout.createSequentialGroup()
+                .addGroup(graphOptionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(option1Button, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(option2Button, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(1, 1, 1)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGroup(graphOptionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(option4Button, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(option3Button, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, graphOptionsPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton12)
+                .addComponent(moreGraphsButton)
                 .addGap(59, 59, 59))
         );
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        chatPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-        jScrollPane2.setAutoscrolls(true);
+        chatScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        chatScrollPane.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        chatScrollPane.setAutoscrolls(true);
 
-        jList1.setModel(listModel);
-        jList1.addMouseListener(new java.awt.event.MouseAdapter() {
+        chatList.setModel(listModel);
+        chatList.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jList1MouseClicked(evt);
+                chatListMouseClicked(evt);
             }
         });
-        jScrollPane2.setViewportView(jList1);
+        chatScrollPane.setViewportView(chatList);
 
-        jButton3.setText("Send");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        sendMessageButton.setText("Send");
+        sendMessageButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                sendMessageButtonActionPerformed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("Zoom Chat");
+        chatTitleText.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        chatTitleText.setText("Zoom Chat");
 
-        jTextField1.setText("Send Message");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        sendMessageForm.setText("Send Message");
+        sendMessageForm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                sendMessageFormActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout chatPanelLayout = new javax.swing.GroupLayout(chatPanel);
+        chatPanel.setLayout(chatPanelLayout);
+        chatPanelLayout.setHorizontalGroup(
+            chatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(chatPanelLayout.createSequentialGroup()
+                .addGroup(chatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(chatPanelLayout.createSequentialGroup()
+                        .addGroup(chatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(chatPanelLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(chatTitleText, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(chatPanelLayout.createSequentialGroup()
+                                .addComponent(sendMessageForm, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton3)))
+                                .addComponent(sendMessageButton)))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, chatPanelLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(chatScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+        chatPanelLayout.setVerticalGroup(
+            chatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, chatPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(chatTitleText)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(chatScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(chatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(sendMessageButton)
+                    .addComponent(sendMessageForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
-        jButton9.setText("Select");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        selectGraphButton.setText("Select");
+        selectGraphButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                selectGraphButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addComponent(jLabel8)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+        javax.swing.GroupLayout previewPanelLayout = new javax.swing.GroupLayout(previewPanel);
+        previewPanel.setLayout(previewPanelLayout);
+        previewPanelLayout.setHorizontalGroup(
+            previewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, previewPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton9)
+                .addComponent(selectGraphButton)
                 .addContainerGap())
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
-                .addComponent(jButton9))
+        previewPanelLayout.setVerticalGroup(
+            previewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, previewPanelLayout.createSequentialGroup()
+                .addContainerGap(130, Short.MAX_VALUE)
+                .addComponent(selectGraphButton))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout mainPagePanelLayout = new javax.swing.GroupLayout(mainPagePanel);
+        mainPagePanel.setLayout(mainPagePanelLayout);
+        mainPagePanelLayout.setHorizontalGroup(
+            mainPagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainPagePanelLayout.createSequentialGroup()
                 .addGap(2, 2, 2)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(mainPagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(mainPagePanelLayout.createSequentialGroup()
+                        .addComponent(recordAnswersButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(1, 1, 1)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addComponent(visualizeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(chatPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(0, 0, 0))))
+                .addGroup(mainPagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(graphOptionsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(previewPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        mainPagePanelLayout.setVerticalGroup(
+            mainPagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainPagePanelLayout.createSequentialGroup()
+                .addGroup(mainPagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(mainPagePanelLayout.createSequentialGroup()
+                        .addComponent(graphOptionsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(previewPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(mainPagePanelLayout.createSequentialGroup()
+                        .addGroup(mainPagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(visualizeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(recordAnswersButton, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(chatPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(6, 11, Short.MAX_VALUE))
         );
 
-        jButton1.getAccessibleContext().setAccessibleDescription("Start recording the chat, answers will be collected and automatically fed into the graphs");
+        recordAnswersButton.getAccessibleContext().setAccessibleDescription("Start recording the chat, answers will be collected and automatically fed into the graphs");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(mainPagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(mainPagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void visualizeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visualizeButtonActionPerformed
         // TODO add your handling code here:
         //Visualize button was pressed
         if (graphOptsVis == false) {
-            jPanel2.setVisible(true);
+            graphOptionsPanel.setVisible(true);
             graphOptsVis = true;
         }
         else {
-            jPanel2.setVisible(false);
+            graphOptionsPanel.setVisible(false);
             graphOptsVis = false;
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_visualizeButtonActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void sendMessageFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendMessageFormActionPerformed
         // TODO add your handling code here:
-        System.out.println(jTextField1.getAccessibleContext());
+        System.out.println(sendMessageForm.getAccessibleContext());
         
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_sendMessageFormActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void sendMessageButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendMessageButtonActionPerformed
         // TODO add your handling code here:
-        listModel.addElement("Host: " + jTextField1.getText());
-        jList1.setModel(listModel);
-        jTextField1.setText("");
-    }//GEN-LAST:event_jButton3ActionPerformed
+        listModel.addElement("Host: " + sendMessageForm.getText());
+        chatList.setModel(listModel);
+        sendMessageForm.setText("");
+    }//GEN-LAST:event_sendMessageButtonActionPerformed
 
-    private void jPanel2PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jPanel2PropertyChange
+    private void graphOptionsPanelPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_graphOptionsPanelPropertyChange
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel2PropertyChange
+    }//GEN-LAST:event_graphOptionsPanelPropertyChange
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void option4ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_option4ButtonActionPerformed
         // TODO add your handling code here:
         if (options == 0){
-            jPanel2.setVisible(false);
-            jPanel7.setVisible(true);
-            jLabel8.setText("Pie Chart: Preview");
+            graphOptionsPanel.setVisible(false);
+            previewPanel.setVisible(true);
+            option4Button.setText("Pie Chart: Preview");
             graphOptsVis = false;
         }
         else{
-            jPanel2.setVisible(false);
-            jPanel7.setVisible(true);
-            jLabel8.setText("Mind Map: Preview");
+            graphOptionsPanel.setVisible(false);
+            previewPanel.setVisible(true);
+            option4Button.setText("Mind Map: Preview");
             graphOptsVis = false;
         }
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_option4ButtonActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void option3ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_option3ButtonActionPerformed
         // TODO add your handling code here:
         if (options == 0) {
-            jPanel2.setVisible(false);
-            jPanel7.setVisible(true);
-            jLabel8.setText("Set Diagram: Preview");
+            graphOptionsPanel.setVisible(false);
+            previewPanel.setVisible(true);
+            option3Button.setText("Set Diagram: Preview");
             graphOptsVis = false;
         }
         else {
-            jPanel2.setVisible(false);
-            jPanel7.setVisible(true);
-            jLabel8.setText("Horizon Graph: Preview");
+            graphOptionsPanel.setVisible(false);
+            previewPanel.setVisible(true);
+            option3Button.setText("Horizon Graph: Preview");
             graphOptsVis = false;
         }
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_option3ButtonActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void option2ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_option2ButtonActionPerformed
         // TODO add your handling code here:
-        jPanel2.setVisible(false);
-        jPanel7.setVisible(true);
+        graphOptionsPanel.setVisible(false);
+        previewPanel.setVisible(true);
         graphOptsVis = false;
         if (options == 0) {
-            jLabel8.setText("Line Graph: Preview");
+            option2Button.setText("Line Graph: Preview");
         }
         else{
-            jLabel8.setText("Matrix: Preview");
+            option2Button.setText("Matrix: Preview");
         }
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_option2ButtonActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void option1ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_option1ButtonActionPerformed
         // TODO add your handling code here:
-        jPanel2.setVisible(false);
-        jPanel7.setVisible(true);
+        graphOptionsPanel.setVisible(false);
+        previewPanel.setVisible(true);
         graphOptsVis = false;
         if (options == 0) {
-            jLabel8.setText("Bar Graph: Preview");
+            option1Button.setText("Bar Graph: Preview");
         }
         else {
-            jLabel8.setText("Scatter Plot: Preview");
+            option1Button.setText("Scatter Plot: Preview");
         }
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_option1ButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void recordAnswersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recordAnswersButtonActionPerformed
         // TODO add your handling code here:
         if (recording == true){
-            jButton1.setBackground(new Color(240,240,240));
+            recordAnswersButton.setBackground(new Color(240,240,240));
             recording = false;
         }
         else {
-            jButton1.setBackground(new Color(255,51,51));
+            recordAnswersButton.setBackground(new Color(255,51,51));
             for (int i = 0; i < listModel.getSize(); i++) {
                 String listItem = (String)listModel.get(i);
                 listItem = listItem.toUpperCase();
@@ -578,97 +575,97 @@ public class berryUI extends javax.swing.JFrame {
                 }
             }
             for (int i = 0; i< selections.size();i++) {
-                jList1.addSelectionInterval(selections.get(i), selections.get(i));
+                chatList.addSelectionInterval(selections.get(i), selections.get(i));
             }
             recording = true;
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_recordAnswersButtonActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
-        this.setContentPane(jPanel1); 
+        this.setContentPane(mainPagePanel); 
         this.setResizable(false);
         this.setSize(440,350);
         this.repaint();             
         this.revalidate(); 
         System.out.println("switching frames");
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_backButtonActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void selectGraphButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectGraphButtonActionPerformed
         // TODO add your handling code here:
-        this.setContentPane(jPanel5); 
+        this.setContentPane(graphPagePanel); 
         this.setResizable(true);
         this.setSize(600,500);
         this.repaint();             
         this.revalidate(); 
         System.out.println("switching frames");
-    }//GEN-LAST:event_jButton9ActionPerformed
+    }//GEN-LAST:event_selectGraphButtonActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         // TODO add your handling code here:
-        if (!jTextField2.getText().equals("")) {
-            jLabel2.setText(jTextField2.getText());
+        if (!titleField.getText().equals("")) {
+            graphTitleText.setText(titleField.getText());
         }
         
-        if (!jTextField3.getText().equals("")) {
-            jLabel3.setText(jTextField3.getText());
+        if (!vAxisTitleField.getText().equals("")) {
+            vAxisText.setText(vAxisTitleField.getText());
         }
         
-        if (!jTextField4.getText().equals("")) {
-            jLabel4.setText(jTextField4.getText());
+        if (!hAxistTitleField.getText().equals("")) {
+            hAxisText.setText(hAxistTitleField.getText());
         }
-        System.out.println(jTextField2.getText());
-        System.out.println(jTextField3.getText());
-        System.out.println(jTextField4.getText());
-    }//GEN-LAST:event_jButton10ActionPerformed
+        System.out.println(titleField.getText());
+        System.out.println(vAxisTitleField.getText());
+        System.out.println(hAxistTitleField.getText());
+    }//GEN-LAST:event_submitButtonActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+    private void hideMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hideMenuActionPerformed
         // TODO add your handling code here:
         if (graphCust == true) {
-            jPanel6.setVisible(false);
-            jButton11.setText("Show Menu");
+            custimizeGraphPanel.setVisible(false);
+            hideMenu.setText("Show Menu");
             graphCust = false;
         }
         else {
-            jPanel6.setVisible(true);
-            jButton11.setText("Hide Menu");
+            custimizeGraphPanel.setVisible(true);
+            hideMenu.setText("Hide Menu");
             graphCust = true;
         }
-    }//GEN-LAST:event_jButton11ActionPerformed
+    }//GEN-LAST:event_hideMenuActionPerformed
 
-    private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
+    private void chatListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chatListMouseClicked
         // TODO add your handling code here:
-        if (selections.contains(jList1.getSelectedIndex())){
-            selections.remove(selections.indexOf(jList1.getSelectedIndex()));
+        if (selections.contains(chatList.getSelectedIndex())){
+            selections.remove(selections.indexOf(chatList.getSelectedIndex()));
             for (int i = 0; i< selections.size();i++) {
-                jList1.addSelectionInterval(selections.get(i), selections.get(i));
+                chatList.addSelectionInterval(selections.get(i), selections.get(i));
             }
         }
         else{ 
-            selections.add(jList1.getSelectedIndex());
+            selections.add(chatList.getSelectedIndex());
             for (int i = 0; i< selections.size();i++) {
-                jList1.addSelectionInterval(selections.get(i), selections.get(i));
+                chatList.addSelectionInterval(selections.get(i), selections.get(i));
             }
         }
-    }//GEN-LAST:event_jList1MouseClicked
+    }//GEN-LAST:event_chatListMouseClicked
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+    private void moreGraphsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreGraphsButtonActionPerformed
         // TODO add your handling code here:
         if (options == 0) {
-            jButton6.setText("Matrix");
-            jButton7.setText("Horizon Graph");
-            jButton8.setText("Mind Map");
-            jButton5.setText("Scatter Plot");
+            option2Button.setText("Matrix");
+            option3Button.setText("Horizon Graph");
+            option4Button.setText("Mind Map");
+            option1Button.setText("Scatter Plot");
             options = 1;
         }
         else{
-            jButton6.setText("Line Graph");
-            jButton7.setText("Set Diagram");
-            jButton8.setText("Pie Graph");
-            jButton5.setText("Bar Graph");
+            option2Button.setText("Line Graph");
+            option3Button.setText("Set Diagram");
+            option4Button.setText("Pie Graph");
+            option1Button.setText("Bar Graph");
             options = 0;
         }
-    }//GEN-LAST:event_jButton12ActionPerformed
+    }//GEN-LAST:event_moreGraphsButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -706,38 +703,38 @@ public class berryUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JButton backButton;
+    private javax.swing.JList<String> chatList;
+    private javax.swing.JPanel chatPanel;
+    private javax.swing.JScrollPane chatScrollPane;
+    private javax.swing.JLabel chatTitleText;
+    private javax.swing.JPanel custimizeGraphPanel;
+    private javax.swing.JPanel graphOptionsPanel;
+    private javax.swing.JPanel graphPagePanel;
+    private javax.swing.JPanel graphPanel;
+    private javax.swing.JLabel graphTitleText;
+    private javax.swing.JLabel hAxisIndicator;
+    private javax.swing.JLabel hAxisText;
+    private javax.swing.JTextField hAxistTitleField;
+    private javax.swing.JButton hideMenu;
+    private javax.swing.JPanel mainPagePanel;
+    private javax.swing.JButton moreGraphsButton;
+    private javax.swing.JButton option1Button;
+    private javax.swing.JButton option2Button;
+    private javax.swing.JButton option3Button;
+    private javax.swing.JButton option4Button;
+    private javax.swing.JPanel previewPanel;
+    private javax.swing.JButton recordAnswersButton;
+    private javax.swing.JButton selectGraphButton;
+    private javax.swing.JButton sendMessageButton;
+    private javax.swing.JTextField sendMessageForm;
+    private javax.swing.JButton submitButton;
+    private javax.swing.JTextField titleField;
+    private javax.swing.JLabel titleIndicator;
+    private javax.swing.JLabel vAxisIndicator;
+    private javax.swing.JLabel vAxisText;
+    private javax.swing.JTextField vAxisTitleField;
+    private javax.swing.JButton visualizeButton;
+    private GraphPanel graph;
     // End of variables declaration//GEN-END:variables
 }
