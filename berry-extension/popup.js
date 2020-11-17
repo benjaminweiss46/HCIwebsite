@@ -32,8 +32,8 @@ function togglePage() {
 
 function updatePopup() {
     chrome.storage.sync.get(['chat'], function (data) {
-    	console.log(data.chat)
         document.getElementById("c").innerHTML = data.chat;
+        console.log(data.chat);
     });
 }    
 
