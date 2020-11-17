@@ -1,18 +1,31 @@
-var options = ["Yes", "No", "Maybe"];
-var responses = [30, 41, 23];
-
+var options;
+var responses;
+let barChart;
+let pieChart;
+let radChart;
+var chatWords = [];
+var uniqueWordsPerMsg = [];
+var merged = [];
+var ctxBar = document.getElementById("canvasBar");
+var ctxPie = document.getElementById("canvasPie");
+var ctxRad = document.getElementById("canvasRadial");
 document.addEventListener('DOMContentLoaded', initialViewing, false)
 document.querySelector('#back').addEventListener('click', togglePage, false)
 document.querySelector('#barGraph').addEventListener('click',
-	function () { togglePage(); showBarGraph(); }, false)
+	function () { togglePage();}, false)
 document.querySelector('#pieGraph').addEventListener('click',
-	function () { togglePage(); showPieGraph(); }, false)
+	function () { togglePage();}, false)
 document.querySelector('#lineGraph').addEventListener('click',
-	function () { togglePage(); showRadarGraph(); }, false)
+	function () { togglePage();}, false)
 
 
 function initialViewing() {
+	options = ["Yes", "No", "Maybe"];
+	responses = [30, 41, 23];
 	updatePopup();
+	createBarGraph();
+	createPieGraph();
+	createRadarGraph();
 	var x = document.getElementById("mainPage");
 	var y = document.getElementById("graphPage");
 	x.style.display = "block";
@@ -29,7 +42,7 @@ function togglePage() {
 		y.style.display = "block";
 	}
 }
-let cData
+
 function updatePopup() {
 	chrome.storage.sync.get(['chat', 'chat'], function (data) {
 		console.log("updating popup")
@@ -37,22 +50,20 @@ function updatePopup() {
 		document.getElementById("c").innerHTML = data.chat;
 		checkForCommonElements(data.chat);
 	});
+	setTimeout(updatePopup, 3000)
 }
+/**
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 	console.log("got message")
 	updatePopup();
 	return true;
-});
+});**/
 
-var chatWords = [];
-var WordsPerMsg = [];
-var uniqueWordsPerMsg = [];
-var merged = [];
 
 function onlyUnique(value, index, self) {
 	return self.indexOf(value) === index;
 }
-
+var newData = false;
 function checkForCommonElements(chatText) {
 	//cData.getElementsByClassName("oIy2qc")
 	chatWords = []; //clear to get doubling
@@ -60,7 +71,6 @@ function checkForCommonElements(chatText) {
 	uniqueWordsPerMsg = [];
 	merged = [];
 
-	console.log(chatText)
 	var chatTextSplit = chatText.split("data-message-text=\"")
 	for (i = 1; i < chatTextSplit.length; i++) {
 		chatWords.push(chatTextSplit[i].toLowerCase().split("\"")[0])
@@ -83,24 +93,38 @@ function checkForCommonElements(chatText) {
 	const letterFrequencyArr = Object
 		.keys(letterFrequencies)
 		.map(letter => ({ letter, frequency: letterFrequencies[letter] }));
-
 	letterFrequencyArr.sort((a, b) => b.frequency - a.frequency || a.letter.localeCompare(b.letter));
-
-	console.log("here");
-	console.log(chatWords);
-	console.log(wordsPerMsg);
-	console.log(uniqueWordsPerMsg);
-	console.log(merged);
-	console.log(letterFrequencyArr);
+	options = [];
+	responses = [];
+	console.log(barChart.data.datasets[0].data)
+	for (i = 0; i < letterFrequencyArr.length; i++){
+		if (letterFrequencyArr[i].frequency > 2) {
+			newData = true;
+			options.push(letterFrequencyArr[i].letter)
+			responses.push(letterFrequencyArr[i].frequency)
+			//options.push(letterFrequencyArr[i].frequency)
+			//responses.push(letterFrequencyArr[i].letter)
+		}
+	}
+	if (newData == true) {
+		barChart.data.labels = options;
+		barChart.data.datasets[0].data = responses
+		barChart.update();
+		pieChart.data.labels = options;
+		pieChart.data.datasets[0].data = responses
+		pieChart.update();
+		radChart.data.labels = options;
+		radChart.data.datasets[0].data = responses
+		radChart.update();
+	}
+	//barChart.data.labels = options;
+	//barChart.data.datasets[0].data = responses;
+	//[e1,e2,..] where e = {letter: ,frequency: }, where letter = word
 }
 
-var ctx = document.getElementById("canvas");
 
-function showBarGraph() {
-	if (window.myCharts != undefined) {
-		window.myCharts.destroy()
-	}
-	window.myCharts = new Chart(ctx, {
+function createBarGraph() {
+	barChart = new Chart(ctxBar, {
 		type: 'bar',
 		data: {
 			labels: options,
@@ -112,19 +136,29 @@ function showBarGraph() {
 					'rgba(51, 51, 255, 0.3)',
 					'rgba(51, 255, 51, 0.3)']
 			}]
+		},
+		options: {
+    		scales: {
+        		yAxes: [{
+            		ticks: {
+               			 beginAtZero: true
+            		}
+        		}]
+    		}
 		}
 	});
 }
 
-function showRadarGraph() {
-	if (window.myCharts != undefined) {
-		window.myCharts.destroy()
-	}
-	window.myCharts = new Chart(ctx, {
+function createRadarGraph() {
+	radChart = new Chart(ctxRad, {
 		type: 'radar',
 		data: {
 			labels: options,
 			datasets: [{
+				barPercentage: 0.5,
+        		barThickness: 6,
+        		maxBarThickness: 8,
+        		minBarLength: 2,
 				label: '# of Students',
 				data: responses,
 				backgroundColor: ['rgba(255, 51, 51, 0.3)',
@@ -133,13 +167,11 @@ function showRadarGraph() {
 			}]
 		}
 	});
+
 }
 
-function showPieGraph() {
-	if (window.myCharts != undefined) {
-		window.myCharts.destroy()
-	}
-	window.myCharts = new Chart(ctx, {
+function createPieGraph() {
+	pieChart = new Chart(ctxPie, {
 		type: 'pie',
 		data: {
 			labels: options,
