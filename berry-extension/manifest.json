@@ -10,8 +10,8 @@
 	],
 	"browser_action": {
 		"default_popup": "popup.html", 
-		"default_title": "Berry",
-		"default_icon": "berry533x580.jpg"
+		"default_title": "Berri",
+		"default_icon": "logo.png"
 	},
 	"background": {
 		"scripts": ["background.js"]
