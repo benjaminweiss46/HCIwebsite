@@ -1,14 +1,3 @@
-var tempVote
-
-var options;
-var votes;
-
-function initialData() {
-	for (var i = 0; i < 5; i++) {
-
-	}
-}
-
 var options = ["Yes","No","Maybe"];
 var responses = [30, 41, 23];
 
