@@ -65,61 +65,116 @@
 		<ul>
 			<li><a href="#de">Design Evolution</a></li>
 			<li><a href="#pr">Prototype Revisions</a></li>
-			<li><a href="#um">User Manual</a></li>	
+			<li><a href="#um">User Manual</a></li>
 		</ul>
 
 		<p> If you have any doubts or questions, please feel free to contact us at
 			<b>benjamin.weiss3@mail.mcgill.ca</b>. We are more than happy to help you.</p>
 
-			<h3 id="de">Design Evolution</h3>
+		<h3 id="de">Design Evolution</h3>
 
 		<h4>
-		Changed from a Java app to Chrome Extension
+			The app is now designed to run with Google Meet as opposed to Zoom
 		</h4>
 
 		<p>
-		In the formative feedback, the point was made that not all of our target users will necessarily be comfortable
-		with running a Java app through the command line. Recognizing that this is in fact true, we found that switching
-		to a Chrome extension would solve this issue, as they are much easier to run. Also, the users noted that the app
-		was quite intrusive and could not be resized. Now as a Chrome extension, the app takes up very little room on the
-		screen and is easily opened/hidden by clicking the extension icon. Overall, this change was justified from a
-		usability perspective, as it will now be easier to run the app, which in turn allows more users to use it.
+			Having switched to a Chrome Extension, we realized that it was no longer possible for our application to
+			read the Zoom chat data. As a result, we have decided to switch our video conferencing platform of choice to
+			Google Meet, in order for all of our desired features to be feasible.
 		</p>
 
 		<h4>
-		Removed the chat option from the app
+			Changed from a Java app to Chrome Extension
 		</h4>
 
 		<p>
-		In the formative feedback, the chatting feature within the app was also identified as a usability issue. Thus,
-		from a usability perspective, we figured it would be easier for users if we just removed the chat aspect from
-		the app, and left all the chatting actions to the video conferencing software. Furthermore, since the app is now
-		a Chrome extension, we figured it would be even more confusing than before if we were to keep the chat within
-		the app. This decision also makes implementing all of our other features more feasible, since we can now focus
-		more on them instead of the chat, which is not as important.
+			In the formative feedback, the point was made that not all of our target users will necessarily be
+			comfortable with running a Java app through the command line. Recognizing that this is in fact true, we
+			found that switching to a Chrome extension would solve this issue, as they are much easier to run. Also, the
+			users noted that the app was quite intrusive and couldn't be resized. Now as a Chrome extension, the app
+			takes up very little room on the screen and is easily opened/hidden by clicking the extension icon.
+		</p>
+		<p>
+			This change thus satisfies our first usability goal, which states that "the system should seem familiar and
+			therefore be quickly usable", because Chrome extensions should seem more familiar to users than Java apps,
+			so they should be able to use them more quickly.
+		</p>
+		<p>
+			The home page of the extension is much smaller than our previous version of the app, so it is much less
+			intrusive. Also, the extension is available across different tabs in Chrome browser. The host can screen
+			share a tab of their Chrome browser in Google Meet. For example, they can be sharing a youtube video in
+			another tab in Chrome, while still being able to see the homepage of our extension and incoming messages.
+			This change therefore satisfies our third usability goal, "the system should not obstruct the users view of
+			Google Meet and in turn not be too annoying".
+
 		</p>
 
 		<h4>
-		The app is now designed to run with Google Meet as opposed to Zoom
+			Removed the chat option from the app
 		</h4>
 
 		<p>
-		Having switched to a Chrome Extension, we realized that it was no longer possible for our application to read
-		the Zoom chat data. As a result, we have decided to switch our video conferencing platform of choice to Google
-		Meet, in order for all of our desired features to be feasible.
+			In the formative feedback, the chatting feature within the app was also identified as a usability issue.
+			Thus, from a usability perspective, we figured it would be easier for users if we just removed the chat
+			aspect from the app, and left all the chatting actions to the video conferencing software. (Note this refers
+			to the user typing in the chat, a chat log will still be visible). Furthermore, since the app is now a
+			Chrome extension, we figured it would be even more confusing than before if we were to keep the chat within
+			the app.
+		</p>
+		<p>
+			This decision also makes implementing all of our other features more feasible, since we can now focus more
+			on them instead of the chat, which isn't as important.
+		</p>
+		<p>
+			This change was made in order to satisfy our first usability goal, since having the chat in the app impaired
+			the quick usability of the app. Users were confused when the "Send Message" message in the chat box wasn't
+			disappearing when they wanted to type a message. This confused the users and thus did not satisfy this goal.
+		</p>
+		<p>
+			If users are allowed to send messages in our extension, then the message history shown in Google Meet and in
+			our extension will be inconsistent. This decision also ensures the consistency throughout our product,
+			therefore achieves "Consistency and Standards" in heuristic evaluation.
+
 		</p>
 
 		<h4>
-		Removed the "Record Answers" button and the selecting messages feature
+			Removed the "Record Answers" button and the selecting messages feature
 		</h4>
 
 		<p>
-		A major point that was brought up in the formative feedback was the confusion surrounding the "Record Answers"
-		button and the selecting messages feature. A lot of the usability concerns and suggested improvements revolved
-		around these two features. As a result, we decided to remove both features and instead implement their
-		functionalities in a more automated way, to improve usability and reduce the level of confusion for users. As
-		for recording answers, the app will simply always record the chat. For selecting messages, the app will try to
-		identify clusters of messages that go together.
+			A major point that was brought up in the formative feedback was the confusion surrounding the "Record
+			Answers" button and the selecting messages feature. A lot of the usability concerns and suggested
+			improvements revolved around these two features. As a result, we decided to remove both features and instead
+			implement their functionalities in a more automated way, to improve usability and reduce the level of
+			confusion for users. As for recording answers, the app will simply always record the chat. For selecting
+			messages, the app will try to identify clusters of messages that go together.
+		</p>
+		<p>
+			This change once again satisfies the first usability goal. These two features were the main source of
+			confusion in our system, so removing them allows for the app to be much more user friendly. These features
+			also violated our fifth usability goal, which states that "the system should offer feedback as data comes
+			in". These features were confusing mainly because they didn't offer any feedback when they were used in the
+			computer prototype. Thus, by removing them, this usability goal is no longer violated.
+
+		</p>
+
+		<h4>
+			Removed the "preview" page, and "selecting visualization type" page
+		</h4>
+
+		<p>
+			We removed the "preview" page, so that the virtual distance from the home page to the visualization page is
+			much shorter. In this way, when the host feels that the visualization is not ideal, they can simply click on
+			the "Back" button on the visualization page, and they will be directed back to the home page to start a new
+			visualization. Also, we removed the "selecting visualization type" page, instead, we put different
+			visualization methods as buttons directly on the homepage.
+		</p>
+		<p>
+			The users now can cancel the unwanted outputs easily, without having to go through the redundant process of
+			traveling back and forth between homepage, preview page, selecting visualization type page, and finally, the
+			visualization page. This change enables us to achieve "User control and freedom" of the heuristic
+			evaluation.
+
 		</p>
 
 		<h3 id="pr">Prototype Revisions</h3>
