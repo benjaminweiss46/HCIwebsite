@@ -11,8 +11,8 @@ document.querySelector('#lineGraph').addEventListener('click',
 	function() { togglePage(); showRadarGraph();}, false)
 
 
-
 function initialViewing() {
+	updatePopup();
 	var x = document.getElementById("mainPage");
   	var y = document.getElementById("graphPage");
   	x.style.display = "block";
@@ -29,6 +29,24 @@ function togglePage() {
     y.style.display = "block";
   }
 }
+
+function updatePopup() {
+    chrome.storage.sync.get(['chat'], function (data) {
+    	console.log(data.chat)
+        document.getElementById("c").innerHTML = data.chat;
+    });
+}    
+
+chrome.runtime.onMessage.addListener(
+    function(request, sender, sendResponse) {
+        if (request.msg === "something_completed") {
+            //  To do something
+            document.getElementById("popupElement").innerText = request.data.content;
+            console.log(request.data.subject)
+            console.log(request.data.content)
+        }
+    }
+);
 
 var ctx = document.getElementById("canvas");
 
@@ -89,4 +107,5 @@ function showPieGraph() {
 	  }
 	});
 }
+
 

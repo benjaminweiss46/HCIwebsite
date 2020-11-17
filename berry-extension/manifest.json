@@ -4,13 +4,21 @@
 	"manifest_version": 2,
 	"content_scripts": [
 		{
-			"matches": ["https://zoom.us/"],
-			"js": ["content.js"]
+			"matches": ["https://meet.google.com/*"],
+			"js": ["content.js"]//loads the js content of the page
 		}
 	],
 	"browser_action": {
 		"default_popup": "popup.html", 
 		"default_title": "Berry",
 		"default_icon": "berry533x580.jpg"
-	}
+	},
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"permissions": [
+		"tabs",
+		"https://meet.google.com/*",
+		"storage"
+	]
 }
