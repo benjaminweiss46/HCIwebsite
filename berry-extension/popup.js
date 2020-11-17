@@ -12,7 +12,6 @@ document.querySelector('#lineGraph').addEventListener('click',
 
 
 function initialViewing() {
-	updatePopup();
 	var x = document.getElementById("mainPage");
   	var y = document.getElementById("graphPage");
   	x.style.display = "block";
@@ -29,24 +28,30 @@ function togglePage() {
     y.style.display = "block";
   }
 }
-
+let cData
 function updatePopup() {
-    chrome.storage.sync.get(['chat'], function (data) {
+    chrome.storage.sync.get(['chat','chat'], function (data) {
+    	console.log("updating popup")
         document.getElementById("c").innerHTML = data.chat;
-        console.log(data.chat);
+        checkForCommonElements(data.chat);
     });
 }    
-
-chrome.runtime.onMessage.addListener(
-    function(request, sender, sendResponse) {
-        if (request.msg === "something_completed") {
-            //  To do something
-            document.getElementById("popupElement").innerText = request.data.content;
-            console.log(request.data.subject)
-            console.log(request.data.content)
-        }
-    }
-);
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+	console.log("got message")
+	updatePopup();
+	return true;
+});
+var chatWords = [];
+function checkForCommonElements(chatText) {
+	//cData.getElementsByClassName("oIy2qc")
+	chatWords = []; //clear to get doubling
+	console.log(chatText)
+	var chatTextSplit = chatText.split("data-message-text=\"")
+	for (i=1; i < chatTextSplit.length; i++) {
+		chatWords.push(chatTextSplit[i].split("\"")[0])
+	}
+	console.log(chatWords)
+}
 
 var ctx = document.getElementById("canvas");
 
