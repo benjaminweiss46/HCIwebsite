@@ -12,11 +12,11 @@ var ctxRad = document.getElementById("canvasRadial");
 document.addEventListener('DOMContentLoaded', initialViewing, false)
 document.querySelector('#back').addEventListener('click', togglePage, false)
 document.querySelector('#barGraph').addEventListener('click',
-	function () { togglePage();}, false)
+	function () { togglePage(); toggleGraph("bar");}, false)
 document.querySelector('#pieGraph').addEventListener('click',
-	function () { togglePage();}, false)
-document.querySelector('#lineGraph').addEventListener('click',
-	function () { togglePage();}, false)
+	function () { togglePage(); toggleGraph("pie");}, false)
+document.querySelector('#radGraph').addEventListener('click',
+	function () { togglePage(); toggleGraph("rad");}, false)
 
 
 function initialViewing() {
@@ -40,6 +40,26 @@ function togglePage() {
 	} else {
 		x.style.display = "none";
 		y.style.display = "block";
+	}
+}
+function toggleGraph(graphType) {
+	var x = document.getElementById("bar");
+	var y = document.getElementById("pie");
+	var z = document.getElementById("radial");
+	if (graphType === "bar") {
+		x.style.display = "block";
+		y.style.display = "none";
+		z.style.display = "none";
+	}
+	else if (graphType === "rad") {
+		x.style.display = "none";
+		y.style.display = "none";
+		z.style.display = "block";
+	}
+	else if (graphType === "pie") {
+		x.style.display = "none";
+		y.style.display = "block";
+		z.style.display = "none";
 	}
 }
 
@@ -132,9 +152,14 @@ function createBarGraph() {
 				barPercentage: 1,
 				label: '# of Students',
 				data: responses,
-				backgroundColor: ['rgba(255, 51, 51, 0.3)',
+				backgroundColor: [
+					'rgba(255, 51, 51, 0.3)',
 					'rgba(51, 51, 255, 0.3)',
-					'rgba(51, 255, 51, 0.3)']
+					'rgba(51, 255, 51, 0.3)',
+					'rgba(0,255,255, 0.3)',
+					'rgba(255,0,255,0.3)',
+					'rgba(128,0,0,0.3)',
+					'rgba(255,255,0,0.3)']
 			}]
 		},
 		options: {
@@ -161,9 +186,14 @@ function createRadarGraph() {
         		minBarLength: 2,
 				label: '# of Students',
 				data: responses,
-				backgroundColor: ['rgba(255, 51, 51, 0.3)',
+				backgroundColor: [
+					'rgba(255, 51, 51, 0.3)',
 					'rgba(51, 51, 255, 0.3)',
-					'rgba(51, 255, 51, 0.3)']
+					'rgba(51, 255, 51, 0.3)',
+					'rgba(0,255,255, 0.3)',
+					'rgba(255,0,255,0.3)',
+					'rgba(128,0,0,0.3)',
+					'rgba(255,255,0,0.3)']
 			}]
 		}
 	});
@@ -178,9 +208,14 @@ function createPieGraph() {
 			datasets: [{
 				label: '# of Students',
 				data: responses,
-				backgroundColor: ['rgba(255, 51, 51, 0.3)',
+				backgroundColor: [
+					'rgba(255, 51, 51, 0.3)',
 					'rgba(51, 51, 255, 0.3)',
-					'rgba(51, 255, 51, 0.3)']
+					'rgba(51, 255, 51, 0.3)',
+					'rgba(0,255,255, 0.3)',
+					'rgba(255,0,255,0.3)',
+					'rgba(128,0,0,0.3)',
+					'rgba(255,255,0,0.3)']
 			}]
 		}
 	});
