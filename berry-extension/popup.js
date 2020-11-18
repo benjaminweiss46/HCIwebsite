@@ -195,6 +195,13 @@ function createRadarGraph() {
 					'rgba(128,0,0,0.3)',
 					'rgba(255,255,0,0.3)']
 			}]
+		},
+		options: {
+			scale: {
+				ticks: {
+					min: 0
+				}
+			}
 		}
 	});
 
