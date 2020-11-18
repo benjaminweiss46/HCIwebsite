@@ -39,7 +39,7 @@ window.addEventListener('scroll', () => {
 });
 
 document.body.addEventListener('click', () => {
-    window.location = "index.html";
-}, true); 
+    window.location = "proposal.html";
+}, true);
 
 preloadImages();
