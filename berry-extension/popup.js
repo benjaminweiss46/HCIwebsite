@@ -20,8 +20,8 @@ document.querySelector('#radGraph').addEventListener('click',
 
 
 function initialViewing() {
-	options = ["Yes", "No", "Maybe"];
-	responses = [30, 41, 23];
+	options = [];
+	responses = [];
 	updatePopup();
 	createBarGraph();
 	createPieGraph();
