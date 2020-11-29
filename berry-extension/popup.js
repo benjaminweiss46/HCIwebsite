@@ -1,6 +1,8 @@
 var options;
 var responses;
 let barChart;
+var horBar = false;
+var doPie = false; 
 let pieChart;
 let radChart;
 var chatWords = [];
@@ -17,6 +19,10 @@ document.querySelector('#pieGraph').addEventListener('click',
 	function () { togglePage(); toggleGraph("pie");}, false)
 document.querySelector('#radGraph').addEventListener('click',
 	function () { togglePage(); toggleGraph("rad");}, false)
+document.querySelector('#hor').addEventListener('click',
+	function () { toggleBar();}, false)
+document.querySelector('#donut').addEventListener('click',
+	function () { togglePie();}, false)
 
 
 function initialViewing() {
@@ -60,6 +66,28 @@ function toggleGraph(graphType) {
 		x.style.display = "none";
 		y.style.display = "block";
 		z.style.display = "none";
+	}
+}
+function toggleBar() {
+	barChart.destroy();
+	if (horBar == false) {
+		createHorBarGraph();
+		horBar = true;
+	}
+	else {
+		createBarGraph();
+		horBar = false;
+	}
+}
+function togglePie() {
+	pieChart.destroy();
+	if (doPie == false) {
+		createDonutGraph();
+		doPie = true;
+	}
+	else {
+		createPieGraph();
+		doPie = false;
 	}
 }
 
@@ -174,6 +202,37 @@ function createBarGraph() {
 	});
 }
 
+function createHorBarGraph() {
+	barChart = new Chart(ctxBar, {
+		type: 'horizontalBar',
+		data: {
+			labels: options,
+			datasets: [{
+				barPercentage: 1,
+				label: '# of Students',
+				data: responses,
+				backgroundColor: [
+					'rgba(255, 51, 51, 0.3)',
+					'rgba(51, 51, 255, 0.3)',
+					'rgba(51, 255, 51, 0.3)',
+					'rgba(0,255,255, 0.3)',
+					'rgba(255,0,255,0.3)',
+					'rgba(128,0,0,0.3)',
+					'rgba(255,255,0,0.3)']
+			}]
+		},
+		options: {
+    		scales: {
+        		xAxes: [{
+            		ticks: {
+               			 beginAtZero: true
+            		}
+        		}]
+    		}
+		}
+	});
+}
+
 function createRadarGraph() {
 	radChart = new Chart(ctxRad, {
 		type: 'radar',
@@ -210,6 +269,26 @@ function createRadarGraph() {
 function createPieGraph() {
 	pieChart = new Chart(ctxPie, {
 		type: 'pie',
+		data: {
+			labels: options,
+			datasets: [{
+				label: '# of Students',
+				data: responses,
+				backgroundColor: [
+					'rgba(255, 51, 51, 0.3)',
+					'rgba(51, 51, 255, 0.3)',
+					'rgba(51, 255, 51, 0.3)',
+					'rgba(0,255,255, 0.3)',
+					'rgba(255,0,255,0.3)',
+					'rgba(128,0,0,0.3)',
+					'rgba(255,255,0,0.3)']
+			}]
+		}
+	});
+}
+function createDonutGraph() {
+	pieChart = new Chart(ctxPie, {
+		type: 'doughnut',
 		data: {
 			labels: options,
 			datasets: [{
