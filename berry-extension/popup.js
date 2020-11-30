@@ -5,12 +5,14 @@ var horBar = false;
 var doPie = false; 
 let pieChart;
 let radChart;
+let polarChart;
 var chatWords = [];
 var uniqueWordsPerMsg = [];
 var merged = [];
 var ctxBar = document.getElementById("canvasBar");
 var ctxPie = document.getElementById("canvasPie");
 var ctxRad = document.getElementById("canvasRadial");
+var ctxPolar = document.getElementById("canvasPolar");
 document.addEventListener('DOMContentLoaded', initialViewing, false)
 document.querySelector('#back').addEventListener('click', togglePage, false)
 document.querySelector('#barGraph').addEventListener('click',
@@ -19,11 +21,12 @@ document.querySelector('#pieGraph').addEventListener('click',
 	function () { togglePage(); toggleGraph("pie");}, false)
 document.querySelector('#radGraph').addEventListener('click',
 	function () { togglePage(); toggleGraph("rad");}, false)
+document.querySelector('#polarGraph').addEventListener('click',
+	function () { togglePage(); toggleGraph("polar");}, false)
 document.querySelector('#hor').addEventListener('click',
 	function () { toggleBar();}, false)
 document.querySelector('#donut').addEventListener('click',
 	function () { togglePie();}, false)
-
 
 function initialViewing() {
 	options = [];
@@ -32,6 +35,7 @@ function initialViewing() {
 	createBarGraph();
 	createPieGraph();
 	createRadarGraph();
+	createPolarGraph();
 	var x = document.getElementById("mainPage");
 	var y = document.getElementById("graphPage");
 	x.style.display = "block";
@@ -52,20 +56,30 @@ function toggleGraph(graphType) {
 	var x = document.getElementById("bar");
 	var y = document.getElementById("pie");
 	var z = document.getElementById("radial");
+	var v = document.getElementById("polar");
 	if (graphType === "bar") {
 		x.style.display = "block";
 		y.style.display = "none";
 		z.style.display = "none";
+		v.style.display = "none";
 	}
 	else if (graphType === "rad") {
 		x.style.display = "none";
 		y.style.display = "none";
 		z.style.display = "block";
+		v.style.display = "none";
 	}
 	else if (graphType === "pie") {
 		x.style.display = "none";
 		y.style.display = "block";
 		z.style.display = "none";
+		v.style.display = "none";
+	}
+	else if (graphType === "polar") {
+		x.style.display = "none";
+		y.style.display = "none";
+		z.style.display = "none";
+		v.style.display = "block";
 	}
 }
 function toggleBar() {
@@ -95,8 +109,10 @@ function updatePopup() {
 	chrome.storage.sync.get(['chat', 'chat'], function (data) {
 		console.log("updating popup")
 		// printing into chat box
-		document.getElementById("c").innerHTML = data.chat;
-		checkForCommonElements(data.chat);
+		if (data.chat !== undefined) {
+			document.getElementById("c").innerHTML = data.chat;
+			checkForCommonElements(data.chat);
+		}
 	});
 	setTimeout(updatePopup, 3000)
 }
@@ -164,6 +180,9 @@ function checkForCommonElements(chatText) {
 		radChart.data.labels = options;
 		radChart.data.datasets[0].data = responses
 		radChart.update();
+		polarChart.data.labels = options;
+		polarChart.data.datasets[0].data = responses
+		polarChart.update();
 	}
 	//barChart.data.labels = options;
 	//barChart.data.datasets[0].data = responses;
@@ -289,6 +308,26 @@ function createPieGraph() {
 function createDonutGraph() {
 	pieChart = new Chart(ctxPie, {
 		type: 'doughnut',
+		data: {
+			labels: options,
+			datasets: [{
+				label: '# of Students',
+				data: responses,
+				backgroundColor: [
+					'rgba(255, 51, 51, 0.3)',
+					'rgba(51, 51, 255, 0.3)',
+					'rgba(51, 255, 51, 0.3)',
+					'rgba(0,255,255, 0.3)',
+					'rgba(255,0,255,0.3)',
+					'rgba(128,0,0,0.3)',
+					'rgba(255,255,0,0.3)']
+			}]
+		}
+	});
+}
+function createPolarGraph() {
+	polarChart = new Chart(ctxPolar, {
+		type: 'polarArea',
 		data: {
 			labels: options,
 			datasets: [{
