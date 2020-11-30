@@ -82,7 +82,7 @@
 	}
 
 	.button5 {
-		padding: 3px 63px;
+		width: 172px;
 		font-weight: bold;
 		background-color: #FFFFFB;
 		color: #080808;
@@ -92,6 +92,11 @@
 	.button5:hover {
 		background-color: #080808;
 		color: #FFFFFB;
+	}
+
+	button[disabled=disabled], button:disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
 	}
 
 	.container {
@@ -111,7 +116,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Berry</title>
+	<title>Berri</title>
 </head>
 
 <body>
@@ -136,7 +141,7 @@
 			<div class="container">
 				<div class="center">
 					<td>
-						<button class="center button button5" id="flush">Flush!</button>
+						<button class="button button5" id="flush">Flush!</button>
 					</td>
 				</div>
 			</div>

@@ -1,7 +1,7 @@
 var con = document.documentElement.innerHTML
 
 
-clearStorage();
+//clearStorage();
 //document.body.addEventListener('click', updateChat, true);
 
 const interval = setInterval( function() {

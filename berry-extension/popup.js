@@ -44,6 +44,7 @@ function flushHan() {
 	// console.log("curStart = " + curStart);
 }
 function initialViewing() {
+	// document.getElementById("c").innerHTML = "hahahaha";
 	options = [];
 	responses = [];
 	updatePopup();
@@ -148,6 +149,14 @@ function onlyUnique(value, index, self) {
 }
 var newData = false;
 function checkForCommonElements(chatText) {
+
+	if (curStart == msgLen - 1) {
+		document.getElementById("flush").disabled = true;
+		document.getElementById("flush").innerHTML = "Flushed."
+	} else {
+		document.getElementById("flush").disabled = false;
+		document.getElementById("flush").innerHTML = "Flush!"
+	}
 	//cData.getElementsByClassName("oIy2qc")
 	chatTextSplit = [];
 	trimText = [];
