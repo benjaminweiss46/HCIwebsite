@@ -102,10 +102,12 @@ function toggleBar() {
 	if (horBar == false) {
 		createHorBarGraph();
 		horBar = true;
+		document.getElementById("hor").innerHTML = "Vertical";
 	}
 	else {
 		createBarGraph();
 		horBar = false;
+		document.getElementById("hor").innerHTML = "Horizontal";
 	}
 }
 function togglePie() {
@@ -113,10 +115,12 @@ function togglePie() {
 	if (doPie == false) {
 		createDonutGraph();
 		doPie = true;
+		document.getElementById("donut").innerHTML = "Pie";
 	}
 	else {
 		createPieGraph();
 		doPie = false;
+		document.getElementById("donut").innerHTML = "Donut";
 	}
 }
 
