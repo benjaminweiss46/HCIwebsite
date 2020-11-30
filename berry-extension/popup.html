@@ -1,43 +1,145 @@
 <!DOCTYPE html>
 <html lan="en">
 <style>
-    .YTbUzc { color: #000000;
-    		  font-weight: bold;
-    		  border-bottom: 2px solid;
-    		 } 
-    .MuzmKe { color: #666666;
-    		  text-indent: 5px; 
-    		}
-    .oIy2qc { color: #000000; 
-    		  text-indent: 20px; 
-    		}
+	body {
+		background-color: #FFFFFB;
+		font-family: "PT Sans", Helvetica, sans-serif;
+	}
+
+	.YTbUzc {
+		color: #000000;
+		font-weight: bold;
+		border-bottom: 2px solid;
+	}
+
+	.MuzmKe {
+		color: #666666;
+		text-indent: 5px;
+	}
+
+	.oIy2qc {
+		color: #000000;
+		text-indent: 20px;
+	}
+
+	.button {
+		padding: 3px;
+		font-size: 16px;
+		text-align: center;
+		display: inline-block;
+		font-family: "PT Sans", Helvetica, sans-serif;
+		transition-duration: 0.5s;
+		cursor: pointer;
+		border-radius: 12px;
+	}
+
+	.button1 {
+		float: left;
+		background-color: #FFFFFB;
+		color: #CB1B45;
+		border: 2px solid #CB1B45;
+	}
+
+	.button1:hover {
+		background-color: #CB1B45;
+		color: #FFFFFB;
+	}
+
+	.button2 {
+		float: left;
+		background-color: #FFFFFB;
+		color: #F05E1C;
+		border: 2px solid #F05E1C;
+	}
+
+	.button2:hover {
+		background-color: #F05E1C;
+		color: #FFFFFB;
+	}
+
+	.button3 {
+		float: left;
+		background-color: #FFFFFB;
+		color: #227D51;
+		border: 2px solid #227D51;
+	}
+
+	.button3:hover {
+		background-color: #227D51;
+		color: #FFFFFB;
+	}
+
+	.button4 {
+		float: left;
+		background-color: #FFFFFB;
+		color: #113285;
+		border: 2px solid #113285;
+	}
+
+	.button4:hover {
+		background-color: #113285;
+		color: #FFFFFB;
+	}
+
+	.button5 {
+		padding: 3px 63px;
+		font-weight: bold;
+		background-color: #FFFFFB;
+		color: #080808;
+		border: 2px solid #080808;
+	}
+
+	.button5:hover {
+		background-color: #080808;
+		color: #FFFFFB;
+	}
+
+	.container {
+		height: 35px;
+		position: relative;
+	}
+
+	.center {
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
 </style>
+
 <head>
 	<meta charset="utf-8">
 	<title>Berry</title>
 </head>
+
 <body>
 	<div id="mainPage">
 		<div id="options">
 			<table>
 				<tr>
 					<td>
-						<button id="barGraph">Bar Graph</button>
+						<button class="button button1" id="barGraph">Bar</button>
 					</td>
 					<td>
-						<button id="pieGraph">Pie Graph</button>
+						<button class="button button2" id="pieGraph">Pie</button>
 					</td>
 					<td>
-						<button id="polarGraph">Polar Graph</button>
+						<button class="button button3" id="polarGraph">Polar</button>
 					</td>
 					<td>
-						<button id="radGraph">Radar Graph</button>
+						<button class="button button4" id="radGraph">Radar</button>
 					</td>
 				</tr>
-				<td>
-					<button id="flush">Flush</button>
-				</td>
 			</table>
+			<div class="container">
+				<div class="center">
+					<td>
+						<button class="center button button5" id="flush">Flush!</button>
+					</td>
+				</div>
+			</div>
 		</div>
 		<div id="zchat">
 			<h2>Chat</h2>
@@ -46,15 +148,15 @@
 		</div>
 	</div>
 	<div id="graphPage">
-		<button id="back">Back</button>
+		<button class="button button5" id="back">Back</button>
 		<div id="bar">
 			<hr>
-			<button id="hor">Horizontal</button>
+			<button class="button button1" id="hor">Horizontal</button>
 			<canvas id="canvasBar" width="1600" height="900">
-		</canvas></div>
+			</canvas></div>
 		<div id="pie">
 			<hr>
-			<button id="donut">Donut</button>
+			<button class="button button2" id="donut">Donut</button>
 			<canvas id="canvasPie" width="1600" height="900"></canvas>
 		</div>
 		<div id="polar">
@@ -68,6 +170,7 @@
 	</div>
 </body>
 </body>
-<script type="text/javascript", src="/chart.js/dist/chart.js"></script>
-<script type="text/javascript", src="popup.js"></script>
+<script type="text/javascript" , src="/chart.js/dist/chart.js"></script>
+<script type="text/javascript" , src="popup.js"></script>
+
 </html>
