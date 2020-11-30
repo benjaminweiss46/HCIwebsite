@@ -1,8 +1,7 @@
 var con = document.documentElement.innerHTML
 
-getText();
-getHTML();
 
+clearStorage();
 //document.body.addEventListener('click', updateChat, true);
 
 const interval = setInterval( function() {
@@ -22,15 +21,10 @@ function updateChat() {
 
 
 
-function getText(){
-    return document.body.innerText
-}
-function getHTML(){
-    return document.body.outerHTML
-}
+
+
 //console.log(getText());             //Gives you all the text on the page
 //console.log(getHTML());  
-console.log("Hello google meets");  
 
 //chrome.storage.sync.set({ 'dataValue1': 'Some data 1.' });
 //chrome.storage.sync.set({ 'dataValue2': 'Some data 2.' });
