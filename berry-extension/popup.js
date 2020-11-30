@@ -5,9 +5,13 @@ var horBar = false;
 var doPie = false; 
 let pieChart;
 let radChart;
+var chatTextSplit = [];
+var trimText = [];
 var chatWords = [];
 var uniqueWordsPerMsg = [];
 var merged = [];
+var msgLen = 0;
+var curStart = 0;
 var ctxBar = document.getElementById("canvasBar");
 var ctxPie = document.getElementById("canvasPie");
 var ctxRad = document.getElementById("canvasRadial");
@@ -24,6 +28,17 @@ document.querySelector('#hor').addEventListener('click',
 document.querySelector('#donut').addEventListener('click',
 	function () { togglePie();}, false)
 
+	document.addEventListener('DOMContentLoaded', function() {
+		document.getElementById("flush").addEventListener("click", flushHan);
+	  });
+
+function flushHan() {
+	if (msgLen >= 1) {
+		curStart = msgLen - 1;
+	}
+	// console.log("msgLen = " + msgLen);
+	// console.log("curStart = " + curStart);
+}
 
 function initialViewing() {
 	options = [];
@@ -93,7 +108,7 @@ function togglePie() {
 
 function updatePopup() {
 	chrome.storage.sync.get(['chat', 'chat'], function (data) {
-		console.log("updating popup")
+		// console.log("updating popup")
 		// printing into chat box
 		document.getElementById("c").innerHTML = data.chat;
 		checkForCommonElements(data.chat);
@@ -114,15 +129,26 @@ function onlyUnique(value, index, self) {
 var newData = false;
 function checkForCommonElements(chatText) {
 	//cData.getElementsByClassName("oIy2qc")
+	chatTextSplit = [];
+	trimText = [];
 	chatWords = []; //clear to get doubling
 	wordsPerMsg = [];
 	uniqueWordsPerMsg = [];
 	merged = [];
 
-	var chatTextSplit = chatText.split("data-message-text=\"")
-	for (i = 1; i < chatTextSplit.length; i++) {
-		chatWords.push(chatTextSplit[i].toLowerCase().split("\"")[0])
+	chatTextSplit = chatText.split("data-message-text=\"")
+	msgLen = chatTextSplit.length;
+
+	// console.log("chatTextSplit.length = " + chatTextSplit.length);
+	// console.log("msgLen = " + msgLen);
+
+	trimText = chatTextSplit.slice(curStart);
+
+	for (var i = 1; i < trimText.length; i++) {
+		chatWords.push(trimText[i].toLowerCase().split("\"")[0])
 	}
+
+	// console.log(chatWords);
 
 	for (var j = 0; j < chatWords.length; j++) {
 		wordsPerMsg.push(chatWords[j].replace(/[^a-zA-Z0-9 ]/g, '').split(" "));
@@ -144,7 +170,7 @@ function checkForCommonElements(chatText) {
 	letterFrequencyArr.sort((a, b) => b.frequency - a.frequency || a.letter.localeCompare(b.letter));
 	options = [];
 	responses = [];
-	console.log(barChart.data.datasets[0].data)
+	// console.log(barChart.data.datasets[0].data)
 	for (i = 0; i < letterFrequencyArr.length; i++){
 		if (letterFrequencyArr[i].frequency > 2) {
 			newData = true;
