@@ -11,6 +11,7 @@ let polarChart;
 var chatWords = [];
 var uniqueWordsPerMsg = [];
 var merged = [];
+var display = "";
 var msgLen = 0;
 var curStart = 0;
 var ctxBar = document.getElementById("canvasBar");
@@ -129,10 +130,10 @@ function updatePopup() {
 	chrome.storage.sync.get(['chat', 'chat'], function (data) {
 		// console.log("updating popup")
 		// printing into chat box
-		if (data.chat !== undefined) {
-			document.getElementById("c").innerHTML = data.chat;
+//		if (data.chat !== undefined) {
+			//document.getElementById("c").innerHTML = data.chat;
 			checkForCommonElements(data.chat);
-		}
+//		}
 	});
 	setTimeout(updatePopup, 3000)
 }
@@ -164,6 +165,7 @@ function checkForCommonElements(chatText) {
 	wordsPerMsg = [];
 	uniqueWordsPerMsg = [];
 	merged = [];
+	display = "";
 
 	chatTextSplit = chatText.split("data-message-text=\"")
 	msgLen = chatTextSplit.length;
@@ -174,14 +176,19 @@ function checkForCommonElements(chatText) {
 	trimText = chatTextSplit.slice(curStart);
 
 	for (var i = 1; i < trimText.length; i++) {
-		chatWords.push(trimText[i].toLowerCase().split("\"")[0])
+		chatWords.push(trimText[i].split("\"")[0])
 	}
 
 	// console.log(chatWords);
 
 	for (var j = 0; j < chatWords.length; j++) {
-		wordsPerMsg.push(chatWords[j].replace(/[^a-zA-Z0-9 ]/g, '').split(" "));
+		console.log("chatWords = " + chatWords[j]);
+		display = display.concat(chatWords[j]);
+		display = display.concat("<br>");
+		wordsPerMsg.push(chatWords[j].toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '').split(" "));
 	}
+
+	document.getElementById("c").innerHTML = display;
 
 	for (var k = 0; k < wordsPerMsg.length; k++) {
 		uniqueWordsPerMsg.push(wordsPerMsg[k].filter(onlyUnique));
