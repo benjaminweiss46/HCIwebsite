@@ -195,6 +195,7 @@ function checkForCommonElements(chatText) {
 
 	for (var j = 0; j < chatWords.length; j++) {
 		console.log("chatWords = " + chatWords[j]);
+		display = display.concat(" - ");
 		display = display.concat(chatWords[j]);
 		display = display.concat("<br>");
 		wordsPerMsg.push(chatWords[j].toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '').split(" "));
