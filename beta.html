@@ -76,42 +76,100 @@
 		<h4>
 			Added more graph customizations options, and another graph type
 		</h4>
-
 		<p>
-			In the alpha version of our system, we didn’t have too many graph customization options. The only one we really presented was the ability to remove potential answers from the Pie Graph. We’ve now added some more customization tools for the user to play around with. For the Bar Graph, we made it so that the user can toggle the bars to appear either horizontally or vertically. For the Pie Graph, we added the option to view it as a Donut Graph instead. Note that both of these graphs represent the data in essentially the same way, so this option is essentially for visual preference. We also decided to add the Polar Graph as another visualization option for the user. Similarly to the Pie Graph, the user has the option to remove potential answers that they don’t want to visualize from the Polar Graph.
-			<br><br>
-			These changes were made to our system in order to further two of our usability goals. The first of these goals is that “the system should be highly customizable”. Seeing as our alpha system didn’t have too many customizations features, we found it important to add more in order to truly satisfy this usability goal of ours. Another goal we set for ourselves is that “the system should offer the user a high level of optionality”, meaning that they should have several visualization options to choose from. Our alpha system had three options to choose from, which is most likely enough to cover a variety of situations. However, we figured that it could only benefit our system to add another option, so we chose to add the Polar Graph to the already existing choices.
-
+			In the alpha version of our system, we didn't have too many graph customization options. The only one we
+			really presented was the ability to remove potential answers from the Pie Graph. We've now added some more
+			customization tools for the user to play around with. For the Bar Graph, we made it so that the user can
+			toggle the bars to appear either horizontally or vertically. For the Pie Graph, we added the option to view
+			it as a Donut Graph instead. Note that both of these graphs represent the data in essentially the same way,
+			so this option is essentially for visual preference. We also decided to add the Polar Graph as another
+			visualization option for the user. Similarly to the Pie Graph, the user has the option to remove potential
+			answers that they don't want to visualize from the Polar Graph.
 		</p>
-
+		<p>
+			These changes were made to our system in order to further two of our usability goals. The first of these
+			goals is that "the system should be highly customizable". Seeing as our alpha system didn't have too many
+			customizations features, we found it important to add more in order to truly satisfy this usability goal of
+			ours. Another goal we set for ourselves is that "the system should offer the user a high level of
+			optionality", meaning that they should have several visualization options to choose from. Our alpha system
+			had three options to choose from, which is most likely enough to cover a variety of situations. However, we
+			figured that it could only benefit our system to add another option, so we chose to add the Polar Graph to
+			the already existing choices.
+		</p>
 		<h4>
 			Added a flush button, to remove current data from the chat history
 		</h4>
-
 		<p>
-			In the alpha version of our system, there was no real way for the user to get accurate responses to more than 1 question. This is because all the data from the Google Meet chat was being stored in the system, and there was no way to clear the chat history without starting a new meeting. This led to us adding a flush button, which clears all the messages from the app, so that the user can begin to gather new data for another question. The addition of this button allows the user to get rid of any invalid or no longer useful data, which is something they couldn’t do before.
-			<br><br>
-			This change was made to our system for two reasons. Firstly, we wanted to increase the overall usability of our system. We realized that it was inconvenient to only be able to ask and get results for one question, so we needed a way to solve this. Adding the flush button solves exactly that, and thus makes our system way more user-friendly. This idea ties into our first usability goal, which states that “the system should seem familiar and therefore be quickly usable”. Although there wasn’t much time to test our alpha system with new users, we can imagine the confusion that would have stemmed from trying to ask another question while not including the old results. Adding the flush functionality should erase that confusion, since we can now erase the old results and proceed with a new question quite easily. We also wanted to further improve the customizability of our app, which aligns with our usability goal that “the system should be highly customizable”. Even if the answers to a previous question could just be ignored by deselecting them in the Pie Graph or Polar Graph (i.e. the first question asked for favourite color, and the next was a yes/no question), the user may still not want to have these old answers appearing in the chat when visualizing the results. Also, if the user wants to visualize in the Bar Graph for instance (which doesn’t have the deselecting feature), they would have to still include the old answers in the visualization. Although the new answers shouldn’t be affected by the old ones, the graph will be much more confusing. The flush feature takes care of all these features, by allowing the user to customize the chat history and therefore the results that are visualized.
+			In the alpha version of our system, there was no real way for the user to get accurate responses to more
+			than 1 question. This is because all the data from the Google Meet chat was being stored in the system, and
+			there was no way to clear the chat history without starting a new meeting. This led to us adding a flush
+			button, which clears all the messages from the app, so that the user can begin to gather new data for
+			another question. The addition of this button allows the user to get rid of any invalid or no longer useful
+			data, which is something they couldn't do before.
 		</p>
-
+		<p>
+			This change was made to our system for two reasons. Firstly, we wanted to increase the overall usability of
+			our system. We realized that it was inconvenient to only be able to ask and get results for one question, so
+			we needed a way to solve this. Adding the flush button solves exactly that, and thus makes our system way
+			more user-friendly. This idea ties into our first usability goal, which states that "the system should seem
+			familiar and therefore be quickly usable". Although there wasn't much time to test our alpha system with new
+			users, we can imagine the confusion that would have stemmed from trying to ask another question while not
+			including the old results. Adding the flush functionality should erase that confusion, since we can now
+			erase the old results and proceed with a new question quite easily. We also wanted to further improve the
+			customizability of our app, which aligns with our usability goal that "the system should be highly
+			customizable". Even if the answers to a previous question could just be ignored by deselecting them in the
+			Pie Graph or Polar Graph (i.e. the first question asked for favourite color, and the next was a yes/no
+			question), the user may still not want to have these old answers appearing in the chat when visualizing the
+			results. Also, if the user wants to visualize in the Bar Graph for instance (which doesn't have the
+			deselecting feature), they would have to still include the old answers in the visualization. Although the
+			new answers shouldn't be affected by the old ones, the graph will be much more confusing. The flush feature
+			takes care of all these features, by allowing the user to customize the chat history and therefore the
+			results that are visualized. In making this change, we also ended up satisfying another one of our usability
+			goals, which states that "the system should offer feedback as data comes in". When the flush button is
+			clicked, we receive feedback in two different forms. First of all, the chat history is cleared, so that all
+			the messages that were there no longer are. Second, the "Flush!" button turns into a greyed out "Flushed.""
+			button, indicating that the flush action has in fact occurred.
+		</p>
 		<h4>
 			Fixed some confusing bugs in the system
 		</h4>
-
 		<p>
-			In the alpha version of our system, we had some recurring bugs that we hadn’t fixed. One of these bugs, which was also brought up in the feedback we received on our alpha system deliverable, was that the chat history menu was occasionally being marked as undefined, which led to some confusion for the users. We clearly didn’t mean for this to occur, so we fixed the bug, and now the chat history title is just followed by a blank space if there are no current messages.
-			<br><br>
-			This fix was made in order to conform with our first usability goal, which states that “the system should seem familiar and therefore be quickly usable”. We believe that any confusing aspect of our system leads to less familiarity, and thus makes the system harder to use. That being said, in order to satisfy this goal as well as we can, we need to remove any confusing aspects, whether they be conscious design choices, or bugs that we hadn’t noticed.
-
+			In the alpha version of our system, we had some recurring bugs that we hadn't fixed. One of these bugs,
+			which was also brought up in the feedback we received on our alpha system deliverable, was that the chat
+			history menu was occasionally being marked as undefined, which led to some confusion for the users. We
+			clearly didn't mean for this to occur, so we fixed the bug, and now the chat history title is just followed
+			by a blank space if there are no current messages.
+		</p>
+		<p>
+			This fix was made in order to conform with our first usability goal, which states that "the system should
+			seem familiar and therefore be quickly usable". We believe that any confusing aspect of our system leads to
+			less familiarity, and thus makes the system harder to use. That being said, in order to satisfy this goal as
+			well as we can, we need to remove any confusing aspects, whether they be conscious design choices, or bugs
+			that we hadn't noticed.
 		</p>
 		<h4>
 			Updated the colours and CSS designs of the system user interface
 		</h4>
 		<p>
-			In the alpha version of our system, the user interface was quite generic and lacked colour. To address this, we decided to add some colour to the buttons, and we added some CSS designs to all the labels. We believe that these changes make the user interface more pleasant to look at, which in turn increases user engagement with our system. 
-				<br><br>
-			In terms of usability, we believe that this change helps satisfy our first usability goal, which states that “the system should seem familiar and therefore be quickly usable”. This is because adding colours to the important features of the system helps users to identify these features, and therefore use them more quickly.
+			In the alpha version of our system, the user interface was quite generic and lacked colour. To address this,
+			we decided to add some colour to the buttons, and we added some CSS designs to all the labels. All the
+			colors selections are with high saturation, making the users identify each button easily. The colors of the
+			buttons keep consistent throughout the entire system. For example, the "horizontal" or "vertical" buttons
+			inside the "bar" page kept the same color as the "bar" button, same for "pie" and "donut". We believe that
+			these changes make the user interface more pleasant to look at, which in turn increases user engagement with
+			our system.
 		</p>
+		<p>
+			We also substituted the font from default to PT Sans, which is a classic sans-serif font. This font has
+			wider distance between the stems of each letter than the default font, which makes it much easier to read.
+		</p>
+		<p>
+			In terms of usability, we believe that this change helps satisfy our first usability goal, which states that
+			"the system should seem familiar and therefore be quickly usable". This is because adding colours to the
+			important features of the system helps users to identify these features, and therefore use them more
+			quickly.
+		</p>
+
 		<h3 id="pr">Prototype Revisions</h3>
 
 		<a href="Beta/berry-extension.zip">Download Berri</a>
