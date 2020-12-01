@@ -46,8 +46,16 @@ function flushHan() {
 }
 function initialViewing() {
 	// document.getElementById("c").innerHTML = "hahahaha";
+	curStart = 0;
+	msgLen = 0;
 	options = [];
 	responses = [];
+	chatTextSplit = [];
+	trimText = [];
+	chatWords = []; //clear to get doubling
+	wordsPerMsg = [];
+	uniqueWordsPerMsg = [];
+	merged = [];
 	updatePopup();
 	createBarGraph();
 	createPieGraph();
@@ -165,6 +173,7 @@ function checkForCommonElements(chatText) {
 	wordsPerMsg = [];
 	uniqueWordsPerMsg = [];
 	merged = [];
+	msgLen = 0;
 	display = "";
 
 	chatTextSplit = chatText.split("data-message-text=\"")
@@ -178,6 +187,9 @@ function checkForCommonElements(chatText) {
 	for (var i = 1; i < trimText.length; i++) {
 		chatWords.push(trimText[i].split("\"")[0])
 	}
+
+	// console.log("curStart = " + curStart);
+	// console.log("msgLen = " + msgLen);
 
 	// console.log(chatWords);
 
